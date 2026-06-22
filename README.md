@@ -12,7 +12,7 @@ mock-data layer. Policy answers are grounded in the store's actual policy
 documents, so the bot won't invent rules.
 
 <p align="center">
-  <img src="docs/preview.png" alt="The Summit & Pine support chatbot answering an order-tracking and a product-recommendation question, with tool-call badges shown under each reply" width="420" />
+  <img src="docs/preview.png" alt="The Summit & Pine support chatbot answering an order-tracking question, with the web chat UI and Pine assistant" width="640" />
 </p>
 
 > Built as a deliverable for the Upwork *Talent Accelerator: AI Chatbot Developer*
