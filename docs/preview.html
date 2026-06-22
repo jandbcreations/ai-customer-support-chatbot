@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summit & Pine — Support (preview)</title>
+  <!-- Static render of the live chat UI for the README screenshot. Mirrors public/index.html. -->
+  <style>
+    :root {
+      --bg: #0f1c17; --panel: #ffffff; --ink: #1c2b25; --muted: #6b7d75;
+      --brand: #2f6f4e; --brand-dark: #245a3f; --bot-bubble: #eef4f0;
+      --user-bubble: #2f6f4e; --line: #e3eae6; --chip: #f1f6f3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(160deg, #16302330, #0f1c17); background-color: var(--bg);
+      display: flex; align-items: flex-start; justify-content: center; padding: 28px;
+    }
+    .app {
+      width: 640px; background: var(--panel); border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35); display: flex; flex-direction: column; overflow: hidden;
+    }
+    header { background: var(--brand); color: #fff; padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: #ffffff22; border-radius: 10px; display: grid; place-items: center; font-size: 20px; }
+    header h1 { font-size: 16px; margin: 0; font-weight: 650; }
+    header p { font-size: 12px; margin: 2px 0 0; opacity: 0.85; }
+    .status { margin-left: auto; font-size: 12px; display: flex; align-items: center; gap: 6px; opacity: 0.9; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #8fe3b0; }
+    #messages { padding: 20px; display: flex; flex-direction: column; gap: 14px; background: #fbfdfc; }
+    .msg { display: flex; gap: 10px; max-width: 88%; }
+    .msg .avatar { width: 30px; height: 30px; border-radius: 50%; flex: 0 0 30px; display: grid; place-items: center; font-size: 15px; }
+    .msg.bot .avatar { background: var(--bot-bubble); }
+    .bubble { padding: 11px 14px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; }
+    .msg.bot .bubble { background: var(--bot-bubble); color: var(--ink); border-top-left-radius: 4px; }
+    .msg.user { align-self: flex-end; flex-direction: row-reverse; }
+    .msg.user .bubble { background: var(--user-bubble); color: #fff; border-top-right-radius: 4px; }
+    .msg.user .avatar { background: #d9e6df; }
+    .tools { font-size: 11px; color: var(--muted); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .tool-badge { background: var(--chip); color: var(--brand-dark); border: 1px solid var(--line); padding: 1px 8px; border-radius: 999px; font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 20px 14px; background: #fbfdfc; }
+    .chip { background: var(--chip); border: 1px solid var(--line); color: var(--brand-dark); padding: 7px 12px; border-radius: 999px; font-size: 12.5px; }
+    form { display: flex; gap: 10px; padding: 14px; border-top: 1px solid var(--line); background: #fff; }
+    .input { flex: 1; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 14.5px; color: var(--muted); }
+    .send { background: var(--brand); color: #fff; border: none; border-radius: 12px; padding: 12px 18px; font-size: 14px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">🏔️</div>
+      <div>
+        <h1>Summit &amp; Pine Outfitters</h1>
+        <p>Customer support · powered by Pine</p>
+      </div>
+      <div class="status"><span class="dot"></span> Online</div>
+    </header>
+
+    <div id="messages">
+      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Hi! I'm Pine, your Summit &amp; Pine assistant. I can track an order, start a return or exchange, recommend gear, or connect you with a human. What can I do for you?</div></div>
+
+      <div class="msg user"><div class="avatar">🧑</div><div class="bubble">Where is my order SP-100001?</div></div>
+
+      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Great — I found your order! 📦
+
+<b>Order SP-100001</b>
+• Status: Shipped
+• Carrier: UPS
+• Tracking: 1Z999AA10123456784
+• Estimated delivery: June 24, 2026
+
+It contains the Trailblazer Waterproof Hiking Boots (US 10) and a Ridge Midweight Fleece (M). Anything else I can help with?<div class="tools"><span class="tool-badge">⚙ get_order_status</span></div></div></div>
+
+      <div class="msg user"><div class="avatar">🧑</div><div class="bubble">Recommend a warm jacket for winter hiking under $250</div></div>
+
+      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Here are three solid picks for cold-weather hikes under $250:
+
+<b>1. Summit Insulated Down Jacket — $199.99</b>
+800-fill packable down for cold, dry conditions. Warm, light, stuffs into its own pocket.
+
+<b>2. Storm Hardshell Rain Jacket — $179.99</b>
+Fully waterproof shell with pit zips — great over a fleece when it's wet or windy.
+
+My take: the Summit Down Jacket for pure warmth, or pair the Storm shell with a fleece for a layered system. Want me to narrow it down?<div class="tools"><span class="tool-badge">⚙ recommend_products</span></div></div></div>
+    </div>
+
+    <div class="chips">
+      <span class="chip">Where is my order SP-100001?</span>
+      <span class="chip">I want to return something</span>
+      <span class="chip">Recommend a warm jacket for winter hiking</span>
+      <span class="chip">I need to talk to a person</span>
+    </div>
+
+    <form>
+      <div class="input">Type your message…</div>
+      <div class="send">Send</div>
+    </form>
+  </div>
+</body>
+</html>
