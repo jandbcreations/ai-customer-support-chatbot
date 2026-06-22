@@ -1,0 +1,68 @@
+{
+  "business": {
+    "name": "Summit & Pine Outfitters",
+    "tagline": "Gear for the outdoors — apparel and camping equipment for every season.",
+    "supportHours": "Monday–Friday, 8am–6pm Mountain Time",
+    "supportEmail": "support@summitandpine.example",
+    "returnWindowDays": 30
+  },
+  "policies": [
+    {
+      "topic": "returns",
+      "title": "Returns",
+      "content": "We accept returns within 30 days of the delivery date. Items must be unworn, unwashed, and in original condition with tags attached. Once we receive the item, refunds are issued to the original payment method within 5–7 business days. Return shipping is free for orders within the United States using the prepaid label we provide."
+    },
+    {
+      "topic": "exchanges",
+      "title": "Exchanges",
+      "content": "Exchanges (for a different size or color of the same item) are free within 30 days of delivery, subject to availability. We place the replacement on hold and ship it as soon as we receive the original item back. If the replacement costs more, we'll collect the difference; if it costs less, we refund the difference."
+    },
+    {
+      "topic": "final_sale",
+      "title": "Final Sale & Exclusions",
+      "content": "Clearance items marked 'Final Sale', gift cards, and used or damaged-by-customer items cannot be returned or exchanged. Worn footwear may only be returned if it is defective."
+    },
+    {
+      "topic": "warranty",
+      "title": "Warranty",
+      "content": "All Summit & Pine gear carries a 1-year limited warranty against manufacturing defects. If something fails due to a defect, we'll repair or replace it at no cost. Normal wear and tear is not covered."
+    },
+    {
+      "topic": "shipping",
+      "title": "Shipping",
+      "content": "Standard shipping is free on orders over $75 and takes 3–5 business days within the continental US. Expedited 2-day shipping is available at checkout for a flat $15. Orders placed before 12pm Mountain Time ship the same business day. We currently ship within the United States only."
+    },
+    {
+      "topic": "order_changes",
+      "title": "Order Changes & Cancellations",
+      "content": "Orders can be changed or cancelled for free while they are still in 'processing' status. Once an order has shipped, it can no longer be cancelled, but it can be returned after delivery under our standard return policy."
+    },
+    {
+      "topic": "price_match",
+      "title": "Price Match",
+      "content": "If you find the same in-stock item at a lower price from an authorized retailer within 14 days of your purchase, contact support and we'll refund the difference."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I track my order?",
+      "answer": "Once your order ships you'll receive an email with a tracking number. You can also ask me here with your order number or the email on the order."
+    },
+    {
+      "question": "Do you ship internationally?",
+      "answer": "Not yet — we currently ship within the United States only."
+    },
+    {
+      "question": "How long do refunds take?",
+      "answer": "Refunds are issued to your original payment method within 5–7 business days after we receive your returned item."
+    },
+    {
+      "question": "Can I return worn boots?",
+      "answer": "Worn footwear can only be returned if it's defective. Unworn footwear in original condition can be returned within 30 days."
+    },
+    {
+      "question": "Is shipping free?",
+      "answer": "Standard shipping is free on orders over $75 within the continental US. Expedited 2-day shipping is a flat $15."
+    }
+  ]
+}

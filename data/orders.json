@@ -1,0 +1,109 @@
+{
+  "orders": [
+    {
+      "orderId": "SP-100001",
+      "email": "alex.rivera@example.com",
+      "customerName": "Alex Rivera",
+      "status": "shipped",
+      "orderedDate": "2026-06-15",
+      "shippedDate": "2026-06-17",
+      "estimatedDelivery": "2026-06-24",
+      "deliveredDate": null,
+      "carrier": "UPS",
+      "trackingNumber": "1Z999AA10123456784",
+      "shippingAddress": "812 Cedar Trail, Boulder, CO 80302",
+      "items": [
+        { "id": "SP-BOOT-TRAILBLAZER", "name": "Trailblazer Waterproof Hiking Boots", "quantity": 1, "price": 159.99, "size": "US 10" },
+        { "id": "SP-FLC-RIDGE", "name": "Ridge Midweight Fleece", "quantity": 1, "price": 79.99, "size": "M" }
+      ],
+      "total": 239.98
+    },
+    {
+      "orderId": "SP-100002",
+      "email": "jamie.chen@example.com",
+      "customerName": "Jamie Chen",
+      "status": "delivered",
+      "orderedDate": "2026-06-05",
+      "shippedDate": "2026-06-07",
+      "estimatedDelivery": "2026-06-11",
+      "deliveredDate": "2026-06-10",
+      "carrier": "FedEx",
+      "trackingNumber": "612345678901",
+      "shippingAddress": "47 Lakeview Rd, Bend, OR 97701",
+      "items": [
+        { "id": "SP-TENT-AURORA2", "name": "Aurora 2-Person Backpacking Tent", "quantity": 1, "price": 249.99, "size": null },
+        { "id": "SP-PAD-CLOUDREST", "name": "CloudRest Insulated Sleeping Pad", "quantity": 2, "price": 119.99, "size": null }
+      ],
+      "total": 489.97
+    },
+    {
+      "orderId": "SP-100003",
+      "email": "taylor.brooks@example.com",
+      "customerName": "Taylor Brooks",
+      "status": "processing",
+      "orderedDate": "2026-06-21",
+      "shippedDate": null,
+      "estimatedDelivery": "2026-06-27",
+      "deliveredDate": null,
+      "carrier": null,
+      "trackingNumber": null,
+      "shippingAddress": "1500 Aspen Way, Salt Lake City, UT 84101",
+      "items": [
+        { "id": "SP-JKT-SUMMIT", "name": "Summit Insulated Down Jacket", "quantity": 1, "price": 199.99, "size": "L" }
+      ],
+      "total": 199.99
+    },
+    {
+      "orderId": "SP-100004",
+      "email": "morgan.lee@example.com",
+      "customerName": "Morgan Lee",
+      "status": "out_for_delivery",
+      "orderedDate": "2026-06-16",
+      "shippedDate": "2026-06-18",
+      "estimatedDelivery": "2026-06-22",
+      "deliveredDate": null,
+      "carrier": "USPS",
+      "trackingNumber": "9400111899223817654321",
+      "shippingAddress": "29 Birch Ln, Asheville, NC 28801",
+      "items": [
+        { "id": "SP-PACK-VOYAGER65", "name": "Voyager 65L Backpack", "quantity": 1, "price": 219.99, "size": null },
+        { "id": "SP-STOVE-EMBER", "name": "Ember Compact Camp Stove", "quantity": 1, "price": 59.99, "size": null }
+      ],
+      "total": 279.98
+    },
+    {
+      "orderId": "SP-100005",
+      "email": "sam.patel@example.com",
+      "customerName": "Sam Patel",
+      "status": "delivered",
+      "orderedDate": "2026-03-28",
+      "shippedDate": "2026-03-30",
+      "estimatedDelivery": "2026-04-03",
+      "deliveredDate": "2026-04-01",
+      "carrier": "FedEx",
+      "trackingNumber": "612345670000",
+      "shippingAddress": "76 Canyon Dr, Flagstaff, AZ 86001",
+      "items": [
+        { "id": "SP-BAG-MEADOW30", "name": "Meadow 30°F Sleeping Bag", "quantity": 1, "price": 149.99, "size": null }
+      ],
+      "total": 149.99
+    },
+    {
+      "orderId": "SP-100006",
+      "email": "jordan.kim@example.com",
+      "customerName": "Jordan Kim",
+      "status": "cancelled",
+      "orderedDate": "2026-06-12",
+      "shippedDate": null,
+      "estimatedDelivery": null,
+      "deliveredDate": null,
+      "carrier": null,
+      "trackingNumber": null,
+      "shippingAddress": "204 Summit St, Missoula, MT 59801",
+      "items": [
+        { "id": "SP-BAG-GLACIER0", "name": "Glacier 0°F Down Sleeping Bag", "quantity": 1, "price": 329.99, "size": null }
+      ],
+      "total": 329.99
+    }
+  ]
+}
