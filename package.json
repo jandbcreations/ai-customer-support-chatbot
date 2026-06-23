@@ -1,7 +1,7 @@
 {
-  "name": "summit-pine-support-bot",
+  "name": "north-star-support-bot",
   "version": "1.0.0",
-  "description": "Custom LLM customer-support chatbot for an outdoor apparel & camping gear store (order tracking, returns/exchanges, product recommendations, human handoff).",
+  "description": "Custom LLM customer-support chatbot for North Star Outfitters (outdoor apparel & camping gear): order tracking, returns/exchanges, product recommendations, human handoff.",
   "type": "module",
   "engines": {
     "node": ">=18"

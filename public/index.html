@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Summit & Pine — Support</title>
+  <title>North Star Outfitters — Support</title>
   <style>
     :root {
       --bg: #0f1c17;
@@ -137,10 +137,10 @@
 <body>
   <div class="app">
     <header>
-      <div class="logo">🏔️</div>
+      <div class="logo">🧭</div>
       <div>
-        <h1 id="biz-name">Summit &amp; Pine Outfitters</h1>
-        <p>Customer support · powered by Pine</p>
+        <h1 id="biz-name">North Star Outfitters</h1>
+        <p>Customer support · North Star Support Bot</p>
       </div>
       <div class="status"><span class="dot"></span> Online</div>
     </header>
@@ -148,10 +148,10 @@
     <div id="messages"></div>
 
     <div class="chips" id="chips">
-      <div class="chip">Where is my order SP-100001?</div>
-      <div class="chip">I want to return something</div>
+      <div class="chip">Track my order #111</div>
+      <div class="chip">What's your return policy?</div>
       <div class="chip">Recommend a warm jacket for winter hiking</div>
-      <div class="chip">I need to talk to a person</div>
+      <div class="chip">I'd like to speak to a live agent</div>
     </div>
 
     <form id="form">
@@ -208,7 +208,7 @@
     function addEscalationNote() {
       const note = document.createElement('div');
       note.className = 'escalated-note';
-      note.textContent = '👤 Conversation handed off to a human agent';
+      note.textContent = '👤 Connected to a Live Agent';
       messagesEl.appendChild(note);
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
@@ -256,7 +256,7 @@
       if (c.businessName) document.getElementById('biz-name').textContent = c.businessName;
     }).catch(() => {});
 
-    addMessage('bot', "Hi! I'm Pine, your Summit & Pine assistant. I can track an order, start a return or exchange, recommend gear, or connect you with a human. What can I do for you?");
+    addMessage('bot', "Hi! I'm the North Star Support Bot. I can track an order, explain returns & exchanges, recommend gear, or connect you with a live agent. What can I help you with?");
     input.focus();
   </script>
 </body>

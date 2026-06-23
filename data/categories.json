@@ -1,0 +1,75 @@
+{
+  "_comment": "Product categories the bot recommends from. The spec asks the bot to recommend a product CATEGORY after 1-2 clarifying questions, so no specific SKUs or prices are listed.",
+  "categories": [
+    {
+      "id": "insulated-jackets",
+      "name": "Insulated Jackets",
+      "description": "Warm down or synthetic jackets for cold, dry conditions.",
+      "goodFor": ["winter", "cold", "warm", "warmth", "hiking", "camping", "snow", "jacket", "coat"],
+      "examples": ["down jackets", "synthetic puffer jackets", "insulated parkas"]
+    },
+    {
+      "id": "rain-shells",
+      "name": "Rain Shells & Waterproof Jackets",
+      "description": "Waterproof, windproof outer layers for wet and windy weather.",
+      "goodFor": ["rain", "wet", "waterproof", "wind", "shell", "spring", "fall", "jacket", "hiking"],
+      "examples": ["hardshell jackets", "packable rain jackets", "rain ponchos"]
+    },
+    {
+      "id": "layers-fleece",
+      "name": "Base Layers & Fleece",
+      "description": "Breathable midlayers and base layers for warmth you can regulate.",
+      "goodFor": ["layering", "midlayer", "fleece", "base layer", "warmth", "3-season", "hiking", "cold"],
+      "examples": ["fleece pullovers", "merino base layers", "midweight zip tops"]
+    },
+    {
+      "id": "tents",
+      "name": "Tents & Shelters",
+      "description": "Backpacking and car-camping tents across season ratings.",
+      "goodFor": ["camping", "backpacking", "shelter", "tent", "3-season", "4-season", "sleep"],
+      "examples": ["2-person backpacking tents", "family car-camping tents", "ultralight shelters"]
+    },
+    {
+      "id": "sleeping-bags",
+      "name": "Sleeping Bags",
+      "description": "Down and synthetic bags rated for different temperatures.",
+      "goodFor": ["camping", "backpacking", "sleep", "warm", "cold", "winter", "3-season", "bag"],
+      "examples": ["0°F winter bags", "30°F 3-season bags", "ultralight down bags"]
+    },
+    {
+      "id": "sleeping-pads",
+      "name": "Sleeping Pads",
+      "description": "Insulated and inflatable pads for comfort and warmth off the ground.",
+      "goodFor": ["camping", "backpacking", "sleep", "comfort", "insulated", "pad"],
+      "examples": ["insulated inflatable pads", "closed-cell foam pads"]
+    },
+    {
+      "id": "backpacks",
+      "name": "Backpacks",
+      "description": "Daypacks through multi-day packs for any trip length.",
+      "goodFor": ["hiking", "backpacking", "travel", "daypack", "multi-day", "pack", "carry"],
+      "examples": ["20–30L daypacks", "50–65L backpacking packs", "hydration packs"]
+    },
+    {
+      "id": "footwear",
+      "name": "Hiking Footwear",
+      "description": "Boots and trail shoes with support and grip for the trail.",
+      "goodFor": ["hiking", "footwear", "boots", "shoes", "waterproof", "trail", "ankle support"],
+      "examples": ["waterproof hiking boots", "trail-running shoes", "lightweight hikers"]
+    },
+    {
+      "id": "camp-kitchen",
+      "name": "Camp Kitchen & Cooking",
+      "description": "Stoves, cookware, and tools for cooking outdoors.",
+      "goodFor": ["camping", "backpacking", "cooking", "stove", "food", "kitchen"],
+      "examples": ["canister stoves", "cook sets", "lightweight pots"]
+    },
+    {
+      "id": "hydration",
+      "name": "Hydration & Water Treatment",
+      "description": "Bottles, reservoirs, and filters to stay hydrated safely.",
+      "goodFor": ["hydration", "water", "filter", "camping", "backpacking", "hiking"],
+      "examples": ["water filters", "hydration reservoirs", "insulated bottles"]
+    }
+  ]
+}

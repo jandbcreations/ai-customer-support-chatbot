@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Summit & Pine — Support (preview)</title>
+  <title>North Star Outfitters — Support (preview)</title>
   <!-- Static render of the live chat UI for the README screenshot. Mirrors public/index.html. -->
   <style>
     :root {
@@ -48,47 +48,33 @@
 <body>
   <div class="app">
     <header>
-      <div class="logo">🏔️</div>
+      <div class="logo">🧭</div>
       <div>
-        <h1>Summit &amp; Pine Outfitters</h1>
-        <p>Customer support · powered by Pine</p>
+        <h1>North Star Outfitters</h1>
+        <p>Customer support · North Star Support Bot</p>
       </div>
       <div class="status"><span class="dot"></span> Online</div>
     </header>
 
     <div id="messages">
-      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Hi! I'm Pine, your Summit &amp; Pine assistant. I can track an order, start a return or exchange, recommend gear, or connect you with a human. What can I do for you?</div></div>
+      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Hi! I'm the North Star Support Bot. I can track an order, explain returns &amp; exchanges, recommend gear, or connect you with a live agent. What can I help you with?</div></div>
 
-      <div class="msg user"><div class="avatar">🧑</div><div class="bubble">Where is my order SP-100001?</div></div>
+      <div class="msg user"><div class="avatar">🧑</div><div class="bubble">Track my order #111</div></div>
 
-      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Great — I found your order! 📦
+      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Great news! 📦 <b>Order #111</b> has shipped and is arriving tomorrow. Your gear should be at your door soon!
 
-<b>Order SP-100001</b>
-• Status: Shipped
-• Carrier: UPS
-• Tracking: 1Z999AA10123456784
-• Estimated delivery: June 24, 2026
+Is there anything else I can help with — a product recommendation, or a question about returns?<div class="tools"><span class="tool-badge">⚙ get_order_status</span></div></div></div>
 
-It contains the Trailblazer Waterproof Hiking Boots (US 10) and a Ridge Midweight Fleece (M). Anything else I can help with?<div class="tools"><span class="tool-badge">⚙ get_order_status</span></div></div></div>
+      <div class="msg user"><div class="avatar">🧑</div><div class="bubble">Recommend a warm jacket for winter hiking</div></div>
 
-      <div class="msg user"><div class="avatar">🧑</div><div class="bubble">Recommend a warm jacket for winter hiking under $250</div></div>
-
-      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Here are three solid picks for cold-weather hikes under $250:
-
-<b>1. Summit Insulated Down Jacket — $199.99</b>
-800-fill packable down for cold, dry conditions. Warm, light, stuffs into its own pocket.
-
-<b>2. Storm Hardshell Rain Jacket — $179.99</b>
-Fully waterproof shell with pit zips — great over a fleece when it's wet or windy.
-
-My take: the Summit Down Jacket for pure warmth, or pair the Storm shell with a fleece for a layered system. Want me to narrow it down?<div class="tools"><span class="tool-badge">⚙ recommend_products</span></div></div></div>
+      <div class="msg bot"><div class="avatar">🌲</div><div class="bubble">Happy to help! A couple of quick questions: what season and conditions will you face most — cold &amp; dry, or wet &amp; windy?<div class="tools"><span class="tool-badge">⚙ recommend_category</span></div></div></div>
     </div>
 
     <div class="chips">
-      <span class="chip">Where is my order SP-100001?</span>
-      <span class="chip">I want to return something</span>
+      <span class="chip">Track my order #111</span>
+      <span class="chip">What's your return policy?</span>
       <span class="chip">Recommend a warm jacket for winter hiking</span>
-      <span class="chip">I need to talk to a person</span>
+      <span class="chip">I'd like to speak to a live agent</span>
     </div>
 
     <form>

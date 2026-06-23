@@ -1,68 +1,42 @@
 {
   "business": {
-    "name": "Summit & Pine Outfitters",
-    "tagline": "Gear for the outdoors — apparel and camping equipment for every season.",
+    "name": "North Star Outfitters",
+    "botName": "North Star Support Bot",
+    "tagline": "Outdoor apparel and camping gear for North American adventurers.",
     "supportHours": "Monday–Friday, 8am–6pm Mountain Time",
-    "supportEmail": "support@summitandpine.example",
+    "supportEmail": "support@northstaroutfitters.example",
+    "returnsLink": "https://northstaroutfitters.example/returns",
     "returnWindowDays": 30
   },
   "policies": [
     {
       "topic": "returns",
       "title": "Returns",
-      "content": "We accept returns within 30 days of the delivery date. Items must be unworn, unwashed, and in original condition with tags attached. Once we receive the item, refunds are issued to the original payment method within 5–7 business days. Return shipping is free for orders within the United States using the prepaid label we provide."
+      "content": "We accept returns within 30 days. Items must be unused and in their original packaging. Start a return any time at our returns page — we'll email you a prepaid label and your refund is issued once we receive the item."
     },
     {
       "topic": "exchanges",
       "title": "Exchanges",
-      "content": "Exchanges (for a different size or color of the same item) are free within 30 days of delivery, subject to availability. We place the replacement on hold and ship it as soon as we receive the original item back. If the replacement costs more, we'll collect the difference; if it costs less, we refund the difference."
-    },
-    {
-      "topic": "final_sale",
-      "title": "Final Sale & Exclusions",
-      "content": "Clearance items marked 'Final Sale', gift cards, and used or damaged-by-customer items cannot be returned or exchanged. Worn footwear may only be returned if it is defective."
-    },
-    {
-      "topic": "warranty",
-      "title": "Warranty",
-      "content": "All Summit & Pine gear carries a 1-year limited warranty against manufacturing defects. If something fails due to a defect, we'll repair or replace it at no cost. Normal wear and tear is not covered."
+      "content": "Exchanges follow the same 30-day window. Items must be unused and in original packaging. To exchange for a different size or color (subject to availability), start the request at our returns page and note that you'd like an exchange."
     },
     {
       "topic": "shipping",
       "title": "Shipping",
-      "content": "Standard shipping is free on orders over $75 and takes 3–5 business days within the continental US. Expedited 2-day shipping is available at checkout for a flat $15. Orders placed before 12pm Mountain Time ship the same business day. We currently ship within the United States only."
-    },
-    {
-      "topic": "order_changes",
-      "title": "Order Changes & Cancellations",
-      "content": "Orders can be changed or cancelled for free while they are still in 'processing' status. Once an order has shipped, it can no longer be cancelled, but it can be returned after delivery under our standard return policy."
-    },
-    {
-      "topic": "price_match",
-      "title": "Price Match",
-      "content": "If you find the same in-stock item at a lower price from an authorized retailer within 14 days of your purchase, contact support and we'll refund the difference."
+      "content": "Standard shipping takes 3–5 business days. Expedited shipping takes 1–2 business days."
     }
   ],
   "faqs": [
     {
       "question": "How do I track my order?",
-      "answer": "Once your order ships you'll receive an email with a tracking number. You can also ask me here with your order number or the email on the order."
+      "answer": "Just share your order number here and I'll pull up the current status."
     },
     {
-      "question": "Do you ship internationally?",
-      "answer": "Not yet — we currently ship within the United States only."
+      "question": "What is your return policy?",
+      "answer": "Returns are accepted within 30 days for unused items in their original packaging. You can start one at our returns page."
     },
     {
-      "question": "How long do refunds take?",
-      "answer": "Refunds are issued to your original payment method within 5–7 business days after we receive your returned item."
-    },
-    {
-      "question": "Can I return worn boots?",
-      "answer": "Worn footwear can only be returned if it's defective. Unworn footwear in original condition can be returned within 30 days."
-    },
-    {
-      "question": "Is shipping free?",
-      "answer": "Standard shipping is free on orders over $75 within the continental US. Expedited 2-day shipping is a flat $15."
+      "question": "How long does shipping take?",
+      "answer": "Standard shipping is 3–5 business days; expedited is 1–2 business days."
     }
   ]
 }

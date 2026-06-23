@@ -1,45 +1,23 @@
 // Shared domain types for the support chatbot.
 
-export interface Product {
-  id: string;
-  name: string;
-  category: string;
-  price: number;
-  inStock: boolean;
-  description: string;
-  tags: string[];
-  specs: Record<string, unknown>;
-}
-
-export interface OrderItem {
-  id: string;
-  name: string;
-  quantity: number;
-  price: number;
-  size: string | null;
-}
-
-export type OrderStatus =
-  | 'processing'
-  | 'shipped'
-  | 'out_for_delivery'
-  | 'delivered'
-  | 'cancelled';
+export type OrderStatus = 'Shipped' | 'Processing' | 'Delivered';
 
 export interface Order {
-  orderId: string;
-  email: string;
-  customerName: string;
+  orderNumber: string;
   status: OrderStatus;
-  orderedDate: string;
-  shippedDate: string | null;
-  estimatedDelivery: string | null;
-  deliveredDate: string | null;
-  carrier: string | null;
-  trackingNumber: string | null;
-  shippingAddress: string;
-  items: OrderItem[];
-  total: number;
+  statusDetail: string;
+  /** Optional instruction for the bot to follow up after reporting status. */
+  followUpPrompt: string | null;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  description: string;
+  /** Keywords used to match a customer's stated need. */
+  goodFor: string[];
+  /** Representative item types in this category (no SKUs/prices). */
+  examples: string[];
 }
 
 export interface Policy {
@@ -55,8 +33,10 @@ export interface Faq {
 
 export interface Business {
   name: string;
+  botName: string;
   tagline: string;
   supportHours: string;
   supportEmail: string;
+  returnsLink: string;
   returnWindowDays: number;
 }
