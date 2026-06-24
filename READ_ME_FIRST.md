@@ -3,6 +3,8 @@
 Hi Asif — thanks for the feedback! Both requested changes are done. Here's the
 quick version.
 
+**Code repository:** https://github.com/jandbcreations/ai-customer-support-chatbot
+
 ## 1. You can now test everything **without an API key**
 
 The chat previously needed an `ANTHROPIC_API_KEY`. It no longer does. With **no key
