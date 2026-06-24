@@ -8,6 +8,10 @@
     "returnsLink": "https://northstaroutfitters.example/returns",
     "returnWindowDays": 30
   },
+  "shipping": {
+    "standard": { "name": "Standard", "duration": "3–5 business days" },
+    "expedited": { "name": "Expedited", "duration": "1–2 business days" }
+  },
   "policies": [
     {
       "topic": "returns",

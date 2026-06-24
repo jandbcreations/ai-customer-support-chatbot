@@ -5,7 +5,7 @@ import './env.js';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { Conversation } from './agent.js';
+import { createConversation, isMockMode, type Conversation } from './agent.js';
 import { business } from './data.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -18,7 +18,7 @@ app.use(express.static(join(__dirname, '..', 'public')));
 const conversations = new Map<string, Conversation>();
 
 app.get('/api/config', (_req, res) => {
-  res.json({ businessName: business.name, tagline: business.tagline });
+  res.json({ businessName: business.name, tagline: business.tagline, mockMode: isMockMode() });
 });
 
 app.post('/api/chat', async (req, res) => {
@@ -30,7 +30,7 @@ app.post('/api/chat', async (req, res) => {
   try {
     let convo = conversations.get(sessionId);
     if (!convo) {
-      convo = new Conversation();
+      convo = createConversation();
       conversations.set(sessionId, convo);
     }
     const turn = await convo.send(message);
@@ -44,8 +44,13 @@ app.post('/api/chat', async (req, res) => {
 
 const PORT = Number(process.env.PORT) || 3000;
 app.listen(PORT, () => {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.warn('\n⚠️  ANTHROPIC_API_KEY is not set. Copy .env.example to .env and add your key.\n');
+  if (isMockMode()) {
+    console.log(
+      '\n🧪  Running in OFFLINE MOCK MODE — no API key needed. Every feature is testable.' +
+        '\n    (Set ANTHROPIC_API_KEY in .env to use the live Claude model instead.)',
+    );
+  } else {
+    console.log('\n🤖  Running with the live Claude model (ANTHROPIC_API_KEY detected).');
   }
-  console.log(`\n🏔️  ${business.name} support bot running at http://localhost:${PORT}\n`);
+  console.log(`\n🧭  ${business.name} support bot running at http://localhost:${PORT}\n`);
 });

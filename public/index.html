@@ -140,7 +140,7 @@
       <div class="logo">🧭</div>
       <div>
         <h1 id="biz-name">North Star Outfitters</h1>
-        <p>Customer support · North Star Support Bot</p>
+        <p id="subtitle">Customer support · North Star Support Bot</p>
       </div>
       <div class="status"><span class="dot"></span> Online</div>
     </header>
@@ -254,6 +254,10 @@
 
     fetch('/api/config').then((r) => r.json()).then((c) => {
       if (c.businessName) document.getElementById('biz-name').textContent = c.businessName;
+      if (c.mockMode) {
+        document.getElementById('subtitle').textContent =
+          'Customer support · North Star Support Bot · offline demo mode';
+      }
     }).catch(() => {});
 
     addMessage('bot', "Hi! I'm the North Star Support Bot. I can track an order, explain returns & exchanges, recommend gear, or connect you with a live agent. What can I help you with?");

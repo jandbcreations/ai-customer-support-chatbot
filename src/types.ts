@@ -31,6 +31,16 @@ export interface Faq {
   answer: string;
 }
 
+export interface ShippingOption {
+  name: string;
+  duration: string;
+}
+
+export interface Shipping {
+  standard: ShippingOption;
+  expedited: ShippingOption;
+}
+
 export interface Business {
   name: string;
   botName: string;

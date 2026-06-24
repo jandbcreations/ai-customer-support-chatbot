@@ -30,10 +30,17 @@ anything.
 | 3 | **Product recommendations** | Asks 1–2 clarifying questions (season, conditions), then recommends a product **category**. |
 | 4 | **Human handoff** | On an explicit request, frustration, or anything out of scope, transitions to a **Live Agent** with a captured summary and reference number. |
 
-It also handles the functional requirements throughout: **intent recognition**
-across phrasings ("Where is my order?" vs. "track my package"), **guided flows**
-that return to the main menu after each resolution, and a clear **fallback**
-("Sorry, I didn't quite catch that") that offers the four options or an agent.
+It also answers **shipping** questions (Standard 3–5 days, Expedited 1–2 days) via
+a dedicated tool, and handles the functional requirements throughout: **intent
+recognition** across phrasings ("Where is my order?" vs. "track my package"),
+**guided flows** that return to the main menu after each resolution, and a clear
+**fallback** ("Sorry, I didn't quite catch that") that offers the options or an agent.
+
+> ### ✅ Test it with no API key (offline mock mode)
+> Run `npm install && npm run dev` **without** setting a key and the bot starts in
+> **offline mock mode** — a deterministic engine that drives the same tools and data,
+> so you can test **every feature end-to-end without an Anthropic API key**. Add a key
+> to `.env` to switch to the live Claude model. See [Setup & run](#setup--run).
 
 ---
 
@@ -74,6 +81,7 @@ products.
 |------|----------|---------|
 | `get_order_status` | Order tracking | Normalizes the order number and returns the simulated status; unknown numbers are invalid. |
 | `get_return_info` | Returns & exchanges | Returns the policy, conditions, and the returns link; tailors the note to an order if given. |
+| `get_shipping_info` | Shipping | Returns Standard and Expedited delivery durations. |
 | `recommend_category` | Recommendations | Scores the customer's need against the category catalog and returns the best category match(es). |
 | `escalate_to_human` | Human handoff | Transitions to a Live Agent state with a reference number and captured context. |
 
@@ -118,26 +126,40 @@ All responses are grounded in this provided data:
 
 ## Setup & run
 
-**Requirements:** Node.js 18+ and an [Anthropic API key](https://console.anthropic.com/settings/keys).
+**Requirements:** Node.js 18+. An [Anthropic API key](https://console.anthropic.com/settings/keys)
+is **optional** — without one the bot runs in offline mock mode.
 
 ```bash
-# 1. Install
 npm install
-
-# 2. Configure your key
-cp .env.example .env       # or .env.local
-#   then set ANTHROPIC_API_KEY=sk-ant-...
-
-# 3. Run the web app
-npm run dev                # http://localhost:3000  (auto-reload)
+npm run dev      # http://localhost:3000  (auto-reload)
 #   or:  npm start
-
-# Optional: chat in the terminal instead
-npm run cli
 ```
 
-Open **http://localhost:3000** and use the suggested chips or type your own
-message. No database, no deployment. `npm run typecheck` validates the TypeScript.
+That's it — with **no key**, the server starts in **offline mock mode** and every
+feature is testable. Open **http://localhost:3000** and use the suggested chips or
+type your own message.
+
+**To use the live Claude model instead**, add a key:
+
+```bash
+cp .env.example .env        # or .env.local
+#   then set ANTHROPIC_API_KEY=sk-ant-...
+npm run dev
+```
+
+You can also chat in the terminal with `npm run cli`, and `npm run typecheck`
+validates the TypeScript. No database, no deployment.
+
+### Two engines, one behavior
+
+| Mode | When | What runs |
+|------|------|-----------|
+| **Offline mock** | No API key (or `CHAT_MODE=mock`) | A deterministic engine that detects intent and calls the **same tools and data** as the real bot. Lets you verify every feature with no key. |
+| **Live model** | `ANTHROPIC_API_KEY` set | The Anthropic Claude tool-use loop. |
+
+Both call the identical tool layer in `src/tools.ts`, so order statuses, the return
+policy, shipping durations, and recommendations are the same in either mode. The web
+header shows "offline demo mode" when the mock engine is active.
 
 ---
 
@@ -174,6 +196,12 @@ and data are exact).
 > **You:** what's your return policy
 > **Bot:** Here's the rundown: **30-day window** from purchase · items must be **unused and in original packaging** · start your return anytime at https://northstaroutfitters.example/returns — we'll email a prepaid label and refund once we receive the item. Exchanges work the same way. Are you looking to return something, or just checking the policy?
 > *⚙ get_return_info*
+
+**Shipping**
+
+> **You:** how long does shipping take?
+> **Bot:** Here are our shipping options — **Standard: 3–5 business days · Expedited: 1–2 business days.** Anything else I can help with?
+> *⚙ get_shipping_info*
 
 **Product recommendations (clarify → recommend a category)**
 

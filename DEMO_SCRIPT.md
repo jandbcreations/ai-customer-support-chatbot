@@ -4,7 +4,8 @@ A tight, ordered walkthrough that shows **all four required use cases plus a
 fallback scenario** in one clean screen recording. ~2.5 minutes at a relaxed pace.
 
 ## Before you record
-1. `npm install`, set your key in `.env` (or `.env.local`), then `npm run dev`.
+1. `npm install`, then `npm run dev`. (No API key needed — it runs in offline mock
+   mode. Add a key to `.env` if you'd rather demo the live Claude model.)
 2. Open **http://localhost:3000** in a clean browser window (close other tabs).
 3. Have this script on a second screen/phone so you can read the lines to type.
 4. Wait for each reply to finish before typing the next line.
@@ -50,7 +51,15 @@ what's your return policy?
 **Point out:** 30 days, unused, original packaging, **plus the returns link** —
 all from the provided data, nothing invented.
 
-### 1:10 — Use case 3: Product recommendations (clarify → category)
+### 1:05 — Shipping
+Type:
+```
+how long does shipping take?
+```
+**Point out:** it returns both durations — Standard 3–5 days, Expedited 1–2 days —
+from the provided data via the `⚙ get_shipping_info` tool.
+
+### 1:25 — Use case 3: Product recommendations (clarify → category)
 Type a vague request so the clarifying step shows:
 ```
 I need a jacket

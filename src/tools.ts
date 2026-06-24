@@ -7,7 +7,7 @@
 //   escalate_to_human       -> Human handoff (transition to a Live Agent)
 
 import type Anthropic from '@anthropic-ai/sdk';
-import { business, categories, findOrder, policies } from './data.js';
+import { business, categories, findOrder, policies, shipping } from './data.js';
 import type { Category } from './types.js';
 
 export const tools: Anthropic.Tool[] = [
@@ -41,6 +41,23 @@ export const tools: Anthropic.Tool[] = [
           type: 'string',
           enum: ['return', 'exchange', 'policy'],
           description: 'Whether the customer wants to return, exchange, or just understand the policy.',
+        },
+      },
+    },
+  },
+  {
+    name: 'get_shipping_info',
+    description:
+      'Return the available shipping options and their delivery durations (Standard and ' +
+      'Expedited). Use this for any question about shipping speed, delivery time, or how ' +
+      'long an order takes to arrive.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        method: {
+          type: 'string',
+          enum: ['standard', 'expedited', 'all'],
+          description: 'Which option the customer asked about (default "all").',
         },
       },
     },
@@ -135,6 +152,19 @@ function getReturnInfo(input: { orderNumber?: string; intent?: string }) {
   };
 }
 
+function getShippingInfo(input: { method?: 'standard' | 'expedited' | 'all' }) {
+  const method = input.method ?? 'all';
+  const options =
+    method === 'standard'
+      ? [shipping.standard]
+      : method === 'expedited'
+        ? [shipping.expedited]
+        : [shipping.standard, shipping.expedited];
+  return {
+    options: options.map((o) => ({ name: o.name, duration: o.duration })),
+  };
+}
+
 function scoreCategory(c: Category, terms: string[]): number {
   const hay = `${c.name} ${c.description} ${c.goodFor.join(' ')} ${c.examples.join(' ')}`.toLowerCase();
   let score = 0;
@@ -201,6 +231,8 @@ export function executeTool(name: string, input: any): ToolResult {
       return { result: getOrderStatus(input) };
     case 'get_return_info':
       return { result: getReturnInfo(input) };
+    case 'get_shipping_info':
+      return { result: getShippingInfo(input) };
     case 'recommend_category':
       return { result: recommendCategory(input) };
     case 'escalate_to_human':

@@ -4,14 +4,15 @@
 import './env.js';
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-import { Conversation } from './agent.js';
+import { createConversation, isMockMode } from './agent.js';
 import { business } from './data.js';
 
 async function main() {
-  const convo = new Conversation();
+  const convo = createConversation();
   const rl = readline.createInterface({ input, output });
 
-  console.log(`\n🧭  ${business.name} — support chat (type "exit" to quit)\n`);
+  console.log(`\n🧭  ${business.name} — support chat (type "exit" to quit)`);
+  console.log(isMockMode() ? '    [offline mock mode — no API key needed]\n' : '    [live Claude model]\n');
   console.log(`Bot: Hi! I'm the ${business.botName}. How can I help today?\n`);
 
   while (true) {

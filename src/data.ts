@@ -7,7 +7,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import type { Business, Category, Faq, Order, Policy } from './types.js';
+import type { Business, Category, Faq, Order, Policy, Shipping } from './types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, '..', 'data');
@@ -18,9 +18,12 @@ function load<T>(file: string): T {
 
 const ordersFile = load<{ orders: Order[] }>('orders.json');
 const categoriesFile = load<{ categories: Category[] }>('categories.json');
-const policiesFile = load<{ business: Business; policies: Policy[]; faqs: Faq[] }>('policies.json');
+const policiesFile = load<{ business: Business; shipping: Shipping; policies: Policy[]; faqs: Faq[] }>(
+  'policies.json',
+);
 
 export const business: Business = policiesFile.business;
+export const shipping: Shipping = policiesFile.shipping;
 export const policies: Policy[] = policiesFile.policies;
 export const faqs: Faq[] = policiesFile.faqs;
 export const categories: Category[] = categoriesFile.categories;
